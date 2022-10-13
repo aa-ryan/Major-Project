@@ -10,3 +10,6 @@
 	- [Movie-Recommendation-engine](https://github.com/jalajthanaki/Movie_recommendation_engine)
 	- [Hybrid-Recommender-System](https://github.com/SebastianRokholt/Hybrid-Recommender-System)
 	- [ML-projects](https://github.com/imsanjoykb/Machine-Learning-Projects)
+	- [Wine-Quality](https://github.com/shsarv/Machine-Learning-Projects/tree/main/Wine%20Quality%20prediction)
+	- [Quora-Question-pair](https://github.com/UdiBhaskar/Quora-Question-pair-similarity)
+	- [trackMyNutrition](https://github.com/Ravi-Teja-konda/trackMyNutrition)
