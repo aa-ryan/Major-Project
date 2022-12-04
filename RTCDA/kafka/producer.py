@@ -24,8 +24,8 @@ class Producer(object):
                                 }
                 message_info = json.dumps(message_info)
                 print (message_info)
-                producer.send('clickstream', message_info.encode('utf-8'))
-                time.sleep(0.01)
+                producer.send('cs', message_info.encode('utf-8'))
+                time.sleep(1)
         except KeyboardInterrupt:
             pass
         finally:
