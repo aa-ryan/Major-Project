@@ -13,3 +13,7 @@
 	- [Wine-Quality](https://github.com/shsarv/Machine-Learning-Projects/tree/main/Wine%20Quality%20prediction)
 	- [Quora-Question-pair](https://github.com/UdiBhaskar/Quora-Question-pair-similarity)
 	- [trackMyNutrition](https://github.com/Ravi-Teja-konda/trackMyNutrition)
+
+* Final
+	- ycc.androiddrivingassistant download apk
+	- https://www.researchgate.net/publication/286662488_Real-time_driving_assistant_application_for_Android-based_mobile_devices
