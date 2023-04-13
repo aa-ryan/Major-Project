@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: batch_process <hdfs_path>", file=sys.stderr)
-        exit(-1)
+        sys.exit
     
     # Initialize the spark context.
     spark = SparkSession\

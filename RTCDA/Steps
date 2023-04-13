@@ -1,0 +1,26 @@
+Dell
+
+Zookeeper Start
+ sudo /usr/share/zookeeper/bin/zkServer.sh start-foreground
+Check Zookeeper
+ telnet localhost 2181 
+ ruok
+
+
+Kafka
+https://hevodata.com/blog/how-to-install-kafka-on-ubuntu/#java
+https://michaeljohnpena.com/blog/kafka-wsl2/
+Zookeeper-server-start: $KAFKA_HOME/bin/zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+Kafka-Server-start: $KAFKA_HOME/bin/kafka-server-start.sh $KAFKA_HOME/config/server.properties
+Kafka-Producer-start: $KAFKA_HOME/bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+Kafka-Consumer-start: $KAFKA_HOME/bin/kafka-console-consumer.sh --topic quickstart-events --bootstrap-server localhost:9092
+Create-topics: $KAFKA_HOME/bin/kafka-topics.sh --create --topic topic_name --bootstrap-server localhost:9092
+
+Hadoop Installation
+https://kontext.tech/article/978/install-hadoop-332-in-wsl-on-windows
+
+SPark
+https://medium.com/mlearning-ai/single-node-spark-pyspark-cluster-on-windows-subsystem-for-linux-wsl2-22860888a98d
+
+Spark-cassandra-connector
+https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector

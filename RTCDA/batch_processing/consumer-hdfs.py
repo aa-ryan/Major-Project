@@ -9,7 +9,7 @@ class Consumer(object):
         """Initialize Consumer with kafka broker IP and topic."""
         self.bootstrap_servers = bootstrap_servers
         self.topic = topic
-        self.hdfs_path = '/user'
+        self.hdfs_path = 'user/one_at'
         self.consumer = KafkaConsumer(bootstrap_servers = bootstrap_servers)
         self.consumer.subscribe([topic])
         self.block_cnt = 0
@@ -32,7 +32,7 @@ class Consumer(object):
         messageCount = 0
         for message in self.consumer:
             messageCount += 1
-            self.temp_file.write(message.value + "\n")
+            self.temp_file.write(str(message.value, 'utf-8') + "\n")
             if messageCount % 1000 == 0:
                 if self.temp_file.tell() > 20000000:
                     self.flush_to_hdfs(output_dir)
@@ -53,8 +53,8 @@ class Consumer(object):
                                                self.topic, 
                                                timestamp)
 
-        print "Block {}: Flushing 20MB file to HDFS => {}".format(str(self.block_cnt),
-                                                                  hadoop_fullpath)
+        print("Block {}: Flushing 20MB file to HDFS => {}".format(str(self.block_cnt),
+                                                                  hadoop_fullpath))
         self.block_cnt += 1
 
         # place blocked messages into history and cached folders on hdfs
@@ -75,7 +75,6 @@ if __name__ == '__main__':
     if len(sys.argv) != 2:
         print("Usage: consumer-hdfs <bootstrap_servers>", file=sys.stderr)
         exit(-1)
-    print "\nConsuming messages..."
-    cons = Consumer(bootstrap_servers=sys.argv[1], 
-                    topic="wiki")
+    print("\nConsuming messages...")
+    cons = Consumer(bootstrap_servers=sys.argv[1],  topic="cs")
     cons.consume_topic("tmp")
