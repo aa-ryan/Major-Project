@@ -1,0 +1,140 @@
+:: loading settings :: url = jar:file:/usr/local/Cellar/apache-spark/3.3.2/libexec/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+23/04/14 19:12:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+23/04/14 19:12:45 INFO SparkContext: Running Spark version 3.3.2
+23/04/14 19:12:45 INFO ResourceUtils: ==============================================================
+23/04/14 19:12:45 INFO ResourceUtils: No custom resources configured for spark.driver.
+23/04/14 19:12:45 INFO ResourceUtils: ==============================================================
+23/04/14 19:12:45 INFO SparkContext: Submitted application: wiki
+23/04/14 19:12:45 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+23/04/14 19:12:45 INFO ResourceProfile: Limiting resource is cpu
+23/04/14 19:12:45 INFO ResourceProfileManager: Added ResourceProfile id: 0
+23/04/14 19:12:45 INFO SecurityManager: Changing view acls to: arx6363
+23/04/14 19:12:45 INFO SecurityManager: Changing modify acls to: arx6363
+23/04/14 19:12:45 INFO SecurityManager: Changing view acls groups to: 
+23/04/14 19:12:45 INFO SecurityManager: Changing modify acls groups to: 
+23/04/14 19:12:45 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(arx6363); groups with view permissions: Set(); users  with modify permissions: Set(arx6363); groups with modify permissions: Set()
+23/04/14 19:12:46 INFO Utils: Successfully started service 'sparkDriver' on port 56663.
+23/04/14 19:12:46 INFO SparkEnv: Registering MapOutputTracker
+23/04/14 19:12:46 INFO SparkEnv: Registering BlockManagerMaster
+23/04/14 19:12:46 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+23/04/14 19:12:46 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+23/04/14 19:12:46 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+23/04/14 19:12:46 INFO DiskBlockManager: Created local directory at /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/blockmgr-37176f7f-38a7-4752-80be-fbf26460f2a4
+23/04/14 19:12:46 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+23/04/14 19:12:46 INFO SparkEnv: Registering OutputCommitCoordinator
+23/04/14 19:12:46 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/Desktop/final_project/RTCDA/spark-sql-kafka-0-10_2.12-3.4.0.jar at spark://localhost:56663/jars/spark-sql-kafka-0-10_2.12-3.4.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/Desktop/final_project/RTCDA/kafka-clients-3.3.2.jar at spark://localhost:56663/jars/kafka-clients-3.3.2.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar at spark://localhost:56663/jars/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar at spark://localhost:56663/jars/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-core-shaded-4.13.0.jar at spark://localhost:56663/jars/com.datastax.oss_java-driver-core-shaded-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar at spark://localhost:56663/jars/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/org.apache.commons_commons-lang3-3.10.jar at spark://localhost:56663/jars/org.apache.commons_commons-lang3-3.10.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.thoughtworks.paranamer_paranamer-2.8.jar at spark://localhost:56663/jars/com.thoughtworks.paranamer_paranamer-2.8.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/org.scala-lang_scala-reflect-2.12.11.jar at spark://localhost:56663/jars/org.scala-lang_scala-reflect-2.12.11.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.oss_native-protocol-1.5.0.jar at spark://localhost:56663/jars/com.datastax.oss_native-protocol-1.5.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar at spark://localhost:56663/jars/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.typesafe_config-1.4.1.jar at spark://localhost:56663/jars/com.typesafe_config-1.4.1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/org.slf4j_slf4j-api-1.7.26.jar at spark://localhost:56663/jars/org.slf4j_slf4j-api-1.7.26.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/io.dropwizard.metrics_metrics-core-4.1.18.jar at spark://localhost:56663/jars/io.dropwizard.metrics_metrics-core-4.1.18.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/org.hdrhistogram_HdrHistogram-2.1.12.jar at spark://localhost:56663/jars/org.hdrhistogram_HdrHistogram-2.1.12.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/org.reactivestreams_reactive-streams-1.0.3.jar at spark://localhost:56663/jars/org.reactivestreams_reactive-streams-1.0.3.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar at spark://localhost:56663/jars/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.github.spotbugs_spotbugs-annotations-3.1.12.jar at spark://localhost:56663/jars/com.github.spotbugs_spotbugs-annotations-3.1.12.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.2.jar at spark://localhost:56663/jars/com.google.code.findbugs_jsr305-3.0.2.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added JAR file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-query-builder-4.13.0.jar at spark://localhost:56663/jars/com.datastax.oss_java-driver-query-builder-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar at spark://localhost:56663/files/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.spark_spark-cassandra-connector_2.12-3.3.0.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar at spark://localhost:56663/files/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.spark_spark-cassandra-connector-driver_2.12-3.3.0.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-core-shaded-4.13.0.jar at spark://localhost:56663/files/com.datastax.oss_java-driver-core-shaded-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-core-shaded-4.13.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.oss_java-driver-core-shaded-4.13.0.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar at spark://localhost:56663/files/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.oss_java-driver-mapper-runtime-4.13.0.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/org.apache.commons_commons-lang3-3.10.jar at spark://localhost:56663/files/org.apache.commons_commons-lang3-3.10.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/org.apache.commons_commons-lang3-3.10.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/org.apache.commons_commons-lang3-3.10.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.thoughtworks.paranamer_paranamer-2.8.jar at spark://localhost:56663/files/com.thoughtworks.paranamer_paranamer-2.8.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.thoughtworks.paranamer_paranamer-2.8.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.thoughtworks.paranamer_paranamer-2.8.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/org.scala-lang_scala-reflect-2.12.11.jar at spark://localhost:56663/files/org.scala-lang_scala-reflect-2.12.11.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/org.scala-lang_scala-reflect-2.12.11.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/org.scala-lang_scala-reflect-2.12.11.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.oss_native-protocol-1.5.0.jar at spark://localhost:56663/files/com.datastax.oss_native-protocol-1.5.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.oss_native-protocol-1.5.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.oss_native-protocol-1.5.0.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar at spark://localhost:56663/files/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.oss_java-driver-shaded-guava-25.1-jre-graal-sub-1.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.typesafe_config-1.4.1.jar at spark://localhost:56663/files/com.typesafe_config-1.4.1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.typesafe_config-1.4.1.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.typesafe_config-1.4.1.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/org.slf4j_slf4j-api-1.7.26.jar at spark://localhost:56663/files/org.slf4j_slf4j-api-1.7.26.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/org.slf4j_slf4j-api-1.7.26.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/org.slf4j_slf4j-api-1.7.26.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/io.dropwizard.metrics_metrics-core-4.1.18.jar at spark://localhost:56663/files/io.dropwizard.metrics_metrics-core-4.1.18.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/io.dropwizard.metrics_metrics-core-4.1.18.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/io.dropwizard.metrics_metrics-core-4.1.18.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/org.hdrhistogram_HdrHistogram-2.1.12.jar at spark://localhost:56663/files/org.hdrhistogram_HdrHistogram-2.1.12.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/org.hdrhistogram_HdrHistogram-2.1.12.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/org.hdrhistogram_HdrHistogram-2.1.12.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/org.reactivestreams_reactive-streams-1.0.3.jar at spark://localhost:56663/files/org.reactivestreams_reactive-streams-1.0.3.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/org.reactivestreams_reactive-streams-1.0.3.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/org.reactivestreams_reactive-streams-1.0.3.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar at spark://localhost:56663/files/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.github.stephenc.jcip_jcip-annotations-1.0-1.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.github.spotbugs_spotbugs-annotations-3.1.12.jar at spark://localhost:56663/files/com.github.spotbugs_spotbugs-annotations-3.1.12.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.github.spotbugs_spotbugs-annotations-3.1.12.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.github.spotbugs_spotbugs-annotations-3.1.12.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.2.jar at spark://localhost:56663/files/com.google.code.findbugs_jsr305-3.0.2.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.google.code.findbugs_jsr305-3.0.2.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.google.code.findbugs_jsr305-3.0.2.jar
+23/04/14 19:12:47 INFO SparkContext: Added file file:///Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-query-builder-4.13.0.jar at spark://localhost:56663/files/com.datastax.oss_java-driver-query-builder-4.13.0.jar with timestamp 1681479764995
+23/04/14 19:12:47 INFO Utils: Copying /Users/arx6363/.ivy2/jars/com.datastax.oss_java-driver-query-builder-4.13.0.jar to /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/userFiles-9f8240b7-ed5d-4dfe-9917-674e1ea5f0ad/com.datastax.oss_java-driver-query-builder-4.13.0.jar
+23/04/14 19:12:47 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://Aryans-MacBook-Air.local:7077...
+23/04/14 19:12:47 INFO TransportClientFactory: Successfully created connection to Aryans-MacBook-Air.local/127.0.0.1:7077 after 57 ms (0 ms spent in bootstraps)
+23/04/14 19:12:48 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20230414191248-0075
+23/04/14 19:12:48 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20230414191248-0075/0 on worker-20230414094804-192.168.1.6-60982 (192.168.1.6:60982) with 4 core(s)
+23/04/14 19:12:48 INFO StandaloneSchedulerBackend: Granted executor ID app-20230414191248-0075/0 on hostPort 192.168.1.6:60982 with 4 core(s), 1024.0 MiB RAM
+23/04/14 19:12:48 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 56665.
+23/04/14 19:12:48 INFO NettyBlockTransferService: Server created on localhost:56665
+23/04/14 19:12:48 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+23/04/14 19:12:48 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, localhost, 56665, None)
+23/04/14 19:12:48 INFO BlockManagerMasterEndpoint: Registering block manager localhost:56665 with 366.3 MiB RAM, BlockManagerId(driver, localhost, 56665, None)
+23/04/14 19:12:48 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, localhost, 56665, None)
+23/04/14 19:12:48 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, localhost, 56665, None)
+23/04/14 19:12:48 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20230414191248-0075/0 is now RUNNING
+23/04/14 19:12:49 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+23/04/14 19:12:50 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+23/04/14 19:12:50 INFO SharedState: Warehouse path is 'file:/Users/arx6363/Desktop/final_project/RTCDA/spark-warehouse'.
+23/04/14 19:12:54 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (127.0.0.1:56669) with ID 0,  ResourceProfileId 0
+23/04/14 19:12:54 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.6:56671 with 434.4 MiB RAM, BlockManagerId(0, 192.168.1.6, 56671, None)
+23/04/14 19:12:57 ERROR StreamingContext: Error starting the context, marking it as stopped
+java.lang.IllegalArgumentException: requirement failed: No output operations registered, so nothing to execute
+	at scala.Predef$.require(Predef.scala:281)
+	at org.apache.spark.streaming.DStreamGraph.validate(DStreamGraph.scala:169)
+	at org.apache.spark.streaming.StreamingContext.validate(StreamingContext.scala:518)
+	at org.apache.spark.streaming.StreamingContext.liftedTree1$1(StreamingContext.scala:578)
+	at org.apache.spark.streaming.StreamingContext.start(StreamingContext.scala:577)
+	at org.apache.spark.streaming.api.java.JavaStreamingContext.start(JavaStreamingContext.scala:557)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Thread.java:748)
+Traceback (most recent call last):
+  File "/Users/arx6363/Desktop/final_project/RTCDA/streaming/streaming.py", line 56, in <module>
+    ssc.start()
+  File "/usr/local/Cellar/apache-spark/3.3.2/libexec/python/lib/pyspark.zip/pyspark/streaming/context.py", line 214, in start
+  File "/usr/local/Cellar/apache-spark/3.3.2/libexec/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+  File "/usr/local/Cellar/apache-spark/3.3.2/libexec/python/lib/pyspark.zip/pyspark/sql/utils.py", line 196, in deco
+pyspark.sql.utils.IllegalArgumentException: requirement failed: No output operations registered, so nothing to execute
+23/04/14 19:12:57 INFO SparkContext: Invoking stop() from shutdown hook
+23/04/14 19:12:57 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+23/04/14 19:12:57 INFO StandaloneSchedulerBackend: Shutting down all executors
+23/04/14 19:12:57 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+23/04/14 19:12:58 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+23/04/14 19:12:58 INFO MemoryStore: MemoryStore cleared
+23/04/14 19:12:58 INFO BlockManager: BlockManager stopped
+23/04/14 19:12:58 INFO BlockManagerMaster: BlockManagerMaster stopped
+23/04/14 19:12:58 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+23/04/14 19:12:58 INFO SparkContext: Successfully stopped SparkContext
+23/04/14 19:12:58 INFO ShutdownHookManager: Shutdown hook called
+23/04/14 19:12:58 INFO ShutdownHookManager: Deleting directory /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36/pyspark-9ff39a45-73ef-4897-afa9-c0c984f5e92b
+23/04/14 19:12:58 INFO ShutdownHookManager: Deleting directory /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-d10cb12b-fe93-48c7-b378-0b7b6ba09e36
+23/04/14 19:12:58 INFO ShutdownHookManager: Deleting directory /private/var/folders/dm/wnmyjt1x1qj8x8cgty9wd7r80000gn/T/spark-71dd4319-f584-4450-b985-9cfa5d406119
