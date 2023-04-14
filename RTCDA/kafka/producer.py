@@ -25,7 +25,7 @@ class Producer(object):
                 message_info = json.dumps(message_info)
                 print (message_info)
                 producer.send('cs', message_info.encode('utf-8'))
-                # time.sleep(1)
+                time.sleep(3)
         except KeyboardInterrupt:
             pass
         finally:

@@ -9,7 +9,7 @@ class Consumer(object):
         """Initialize Consumer with kafka broker IP and topic."""
         self.bootstrap_servers = bootstrap_servers
         self.topic = topic
-        self.hdfs_path = 'user/one_at'
+        self.hdfs_path = 'user'
         self.consumer = KafkaConsumer(bootstrap_servers = bootstrap_servers)
         self.consumer.subscribe([topic])
         self.block_cnt = 0
@@ -34,7 +34,7 @@ class Consumer(object):
             messageCount += 1
             self.temp_file.write(str(message.value, 'utf-8') + "\n")
             if messageCount % 1000 == 0:
-                if self.temp_file.tell() > 20000000:
+                if self.temp_file.tell() > 200000:
                     self.flush_to_hdfs(output_dir)
 
     def flush_to_hdfs(self, output_dir):
@@ -53,7 +53,7 @@ class Consumer(object):
                                                self.topic, 
                                                timestamp)
 
-        print("Block {}: Flushing 20MB file to HDFS => {}".format(str(self.block_cnt),
+        print("Block {}: Flushing 2MB file to HDFS => {}".format(str(self.block_cnt),
                                                                   hadoop_fullpath))
         self.block_cnt += 1
 

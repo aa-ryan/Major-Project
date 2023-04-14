@@ -22,8 +22,8 @@ def getWeights(urlWeights):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: batch_process <hdfs_path> <iterations>", file=sys.stderr)
+    if len(sys.argv) != 2:
+        print("Usage: batch_process <without hdfs_path> <iterations>", file=sys.stderr)
         exit(-1)
 
     print("WARN: This is a naive implementation of PageRank and is given as an example!\n" +
@@ -36,7 +36,11 @@ if __name__ == "__main__":
         .appName("PythonPageRank")\
         .getOrCreate()
         
-    df = spark.read.json(sys.argv[1]).select("prev_title", "curr_title", "n")
+    # df = spark.read.json('hdfs://localhost:8020/user/arx6363/user/*.dat')
+    # print(df.columns)
+    # exit(0)
+    # df = spark.read.json('hdfs://localhost:8020/user/arx6363/user/*.dat').select("prev_title", "curr_title", "n")
+    df = spark.read.csv('data/preprocessed_data.csv', header=True).select("prev_title", "curr_title", "n")
     df.createOrReplaceTempView("df")
     
     # make the (prev_title, curr_title) unique
@@ -64,7 +68,7 @@ if __name__ == "__main__":
     ranks = weightedLinks.map(lambda url_neighbors: (url_neighbors[0], 1.0))
     
     # Calculates and updates URL ranks continuously using PageRank algorithm.
-    for iteration in range(int(sys.argv[2])):
+    for iteration in range(int(sys.argv[1])):
         # Calculates URL contributions to the rank of other URLs.
         contribs = weightedLinks.join(ranks).flatMap(
             lambda url_urls_rank: computeContribs(url_urls_rank[1][0], url_urls_rank[1][1]))

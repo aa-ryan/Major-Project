@@ -4,22 +4,27 @@ import json
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 from pyspark.sql import SparkSession
-from pyspark.streaming.kafka import KafkaUtils
 
 # Lazily instantiated global instance of SparkSession
-def getSparkSessionInstance(sparkConf):
-    if ("sparkSessionSingletonInstance" not in globals()):
-        globals()["sparkSessionSingletonInstance"] = SparkSession \
-            .builder \
-            .config(conf=sparkConf) \
-            .getOrCreate()
-    return globals()["sparkSessionSingletonInstance"]
+# def getSparkSessionInstance(sparkConf):
+#     if ("sparkSessionSingletonInstance" not in globals()):
+#         globals()["sparkSessionSingletonInstance"] = SparkSession \
+#             .builder \
+#             .config(conf=sparkConf) \
+#             .getOrCreate()
+#     return globals()["sparkSessionSingletonInstance"]
 
-def process(rdd):
+def process():
     try:
         # Get the singleton instance of SparkSession
-        spark = getSparkSessionInstance(rdd.context.getConf())
-
+        # spark = getSparkSessionInstance(rdd.context.getConf())
+        spark = SparkSession.builder.appName("wiki").getOrCreate()
+        rdd = spark \
+            .readStream.format("kafka") \
+            .option("kafka.bootstrap.servers", "localhost:9092") \
+            .option("subscribe", "cs") \
+            .option('startingOffsets', 'earliest') \
+            .load()
         df = spark.read.json(rdd)
 
         # Creates a temporary view using the DataFrame
@@ -46,13 +51,7 @@ if __name__ == "__main__":
     sc = SparkContext(appName="wiki")
     ssc = StreamingContext(sc, 1)
 
-    kafkaStream = KafkaUtils.createDirectStream(ssc, 
-                                                ["clickstream"], 
-                                                {"bootstrap.servers": sys.argv[1]})
-    
-    lines = kafkaStream.map(lambda x: x[1])
-    
-    lines.foreachRDD(process)
+    process()
     
     ssc.start()
     ssc.awaitTermination()
