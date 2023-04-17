@@ -24,3 +24,25 @@ https://medium.com/mlearning-ai/single-node-spark-pyspark-cluster-on-windows-sub
 
 Spark-cassandra-connector
 https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector
+
+Password ssh for mac
+https://phoenixnap.com/kb/setup-passwordless-ssh
+
+connector
+spark-submit --packages com.datastax.spark:spark-cassandra-connector_2.12:2.5.0
+
+Add this line to $SPARK_HOME/conf/spark-defaults.conf.template
+spark.jars.packages     com.datastax.spark:spark-cassandra-connector_2.11:3.3.0
+
+╰─λ spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 batch_processing/batch_process.py
+
+How I got path
+λ hdfs fsck "user/*.dat"
+2023-04-14 11:31:06,419 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+FileSystem is inaccessible due to:
+java.io.FileNotFoundException: File does not exist: hdfs://localhost:8020/user/arx6363/user/*.dat
+DFSck exiting.
+
+
+pyspark                      3.3.2
+
