@@ -39,8 +39,8 @@ if __name__ == "__main__":
     # df = spark.read.json('hdfs://localhost:8020/user/arx6363/user/*.dat')
     # print(df.columns)
     # exit(0)
-    # df = spark.read.json('hdfs://localhost:8020/user/arx6363/user/*.dat').select("prev_title", "curr_title", "n")
-    df = spark.read.csv('data/preprocessed_data.csv', header=True).select("prev_title", "curr_title", "n")
+    df = spark.read.json('hdfs://localhost:8020/user/arx6363/user/*.dat').select("prev_title", "curr_title", "n")
+    # df = spark.read.csv('data/preprocessed_data.csv', header=True).select("prev_title", "curr_title", "n")
     df.createOrReplaceTempView("df")
     
     # make the (prev_title, curr_title) unique

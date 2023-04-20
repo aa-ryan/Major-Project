@@ -48,11 +48,7 @@ if __name__ == "__main__":
         print("Usage: streaming <bootstrap.servers>", file=sys.stderr)
         exit(-1)
     
-    sc = SparkContext(appName="wiki")
-    ssc = StreamingContext(sc, 1)
-
-    process()
+    while True:
+        process()
     
-    ssc.start()
-    ssc.awaitTermination()
     

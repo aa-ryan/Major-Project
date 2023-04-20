@@ -46,3 +46,16 @@ DFSck exiting.
 
 pyspark                      3.3.2
 
+
+Commands
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
+kafka-server-start /usr/local/etc/kafka/server.properties
+hstart
+conda activate hackpions1
+python preprocessing/preprocess_data.py
+python kafka/producer.py data/preprocessed_data.csv localhost:9092
+python batch_processing/consumer-hdfs.py localhost:9092
+spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 batch_processing/batch_process.py
+spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 batch_processing/pagerank.py 10
+spark-submit --master spark://Aryans-MacBook-Air.local:7077 --jars spark-sql-kafka-0-10_2.12-3.4.0.jar,kafka-clients-3.3.2.jar --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 streaming/streaming.py localhost:9092
+sudo -E python flask/tornadoapp.py

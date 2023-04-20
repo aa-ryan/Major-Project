@@ -6,13 +6,14 @@ from flask import jsonify
 from app import app
 from cassandra.cluster import Cluster
 
-if len(sys.argv) != 2:
-    print("Usage: tornadoapp <public_dns>", file=sys.stderr)
-    exit(-1)
+# if len(sys.argv) != 2:
+#     print("Usage: tornadoapp <public_dns>", file=sys.stderr)
+#     exit(-1)
     
 # Setting up connections to cassandra
-cluster = Cluster([sys.argv[1]])
+cluster = Cluster(['127.0.0.1'])
 session = cluster.connect('wiki')
+print("Connected to Cassandra Cluster")
 
 @app.route('/')
 def batch():
