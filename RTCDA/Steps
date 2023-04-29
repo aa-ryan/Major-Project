@@ -57,5 +57,11 @@ python kafka/producer.py data/preprocessed_data.csv localhost:9092
 python batch_processing/consumer-hdfs.py localhost:9092
 spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 batch_processing/batch_process.py
 spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 batch_processing/pagerank.py 10
-spark-submit --master spark://Aryans-MacBook-Air.local:7077 --jars spark-sql-kafka-0-10_2.12-3.4.0.jar,kafka-clients-3.3.2.jar --packages com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 streaming/streaming.py localhost:9092
+spark-submit --master spark://Aryans-MacBook-Air.local:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0,com.datastax.spark:spark-cassandra-connector_2.12:3.3.0 streaming/streaming.py localhost:9092
 sudo -E python flask/tornadoapp.py
+
+spark localhost: 4040, 4041, 4042
+hadoop localhost: 9870, 9864, 9868, 9871, 9865, 9869, 9872, 9866, 9873, 9867, 9874
+kafka localhost: 2181, 9092
+cassandra localhost: 9042, 9160
+zookeeper localhost: 2181
