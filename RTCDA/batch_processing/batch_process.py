@@ -24,14 +24,14 @@ if __name__ == "__main__":
     # TABLE batch_source use source as partitionkey
     sqlDF.write \
          .format("org.apache.spark.sql.cassandra") \
-         .mode('overwrite').option('confirm.truncate', 'true') \
+         .mode('append') \
          .options(table="batch_source", keyspace="wiki") \
          .save()
     
     # TABLE batch_topic use topic as partitionkey
     sqlDF.write \
          .format("org.apache.spark.sql.cassandra") \
-         .mode('overwrite').option('confirm.truncate', 'true') \
+         .mode('append') \
          .options(table="batch_topic", keyspace="wiki") \
          .save()
     

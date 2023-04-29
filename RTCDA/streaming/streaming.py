@@ -1,54 +1,35 @@
-from __future__ import print_function
-import sys
-import json
-from pyspark import SparkContext
-from pyspark.streaming import StreamingContext
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
 
-# Lazily instantiated global instance of SparkSession
-# def getSparkSessionInstance(sparkConf):
-#     if ("sparkSessionSingletonInstance" not in globals()):
-#         globals()["sparkSessionSingletonInstance"] = SparkSession \
-#             .builder \
-#             .config(conf=sparkConf) \
-#             .getOrCreate()
-#     return globals()["sparkSessionSingletonInstance"]
+spark = SparkSession.builder.appName("wiki").config("spark.sql.streaming.checkpointLocation", "/tmp/checkpoint").getOrCreate()
 
-def process():
-    try:
-        # Get the singleton instance of SparkSession
-        # spark = getSparkSessionInstance(rdd.context.getConf())
-        spark = SparkSession.builder.appName("wiki").getOrCreate()
-        rdd = spark \
-            .readStream.format("kafka") \
-            .option("kafka.bootstrap.servers", "localhost:9092") \
-            .option("subscribe", "cs") \
-            .option('startingOffsets', 'earliest') \
-            .load()
-        df = spark.read.json(rdd)
+df = spark \
+  .readStream \
+  .format("kafka") \
+  .option("kafka.bootstrap.servers", "localhost:9092") \
+  .option("subscribe", "click") \
+  .option("failOnDataLoss", "false") \
+  .option("startingOffsets", "earliest") \
+  .load() \
+  .selectExpr("CAST(value AS STRING)")
 
-        # Creates a temporary view using the DataFrame
-        df.createOrReplaceTempView("wiki")
+schema = "prev_title STRING, timestamp TIMESTAMP"
+df = df.select(from_json(col("value"), schema).alias("data")).select("data.*")
 
-        sqlDF = spark.sql("SELECT prev_title as source, count(*) as count, max(timestamp) as timestamp FROM wiki group by prev_title")
-        
-        sqlDF.show()
-        
-        sqlDF.write \
-             .format("org.apache.spark.sql.cassandra") \
-             .mode('append') \
-             .options(table="realtime", keyspace="wiki") \
-             .save()
-        
-    except:
-        pass
+watermarkedDF = df \
+    .withWatermark("timestamp", "10 minutes") \
+    .groupBy(window("timestamp", "5 minutes"), "prev_title") \
+    .agg(count("*").alias("count"), max("timestamp").alias("timestamp"))
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: streaming <bootstrap.servers>", file=sys.stderr)
-        exit(-1)
-    
-    while True:
-        process()
-    
-    
+watermarkedDF.createOrReplaceTempView("wiki")
+
+sqlDF = spark.sql("SELECT prev_title as source, count, timestamp FROM wiki")
+
+query = sqlDF.writeStream \
+    .outputMode("append") \
+    .format("org.apache.spark.sql.cassandra") \
+    .option("keyspace", "wiki") \
+    .option("table", "realtime") \
+    .start()
+
+query.awaitTermination()

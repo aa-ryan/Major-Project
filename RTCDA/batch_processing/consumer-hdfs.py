@@ -34,7 +34,7 @@ class Consumer(object):
             messageCount += 1
             self.temp_file.write(str(message.value, 'utf-8') + "\n")
             if messageCount % 1000 == 0:
-                if self.temp_file.tell() > 2000000:
+                if self.temp_file.tell() > 200000:
                     self.flush_to_hdfs(output_dir)
 
     def flush_to_hdfs(self, output_dir):
@@ -53,7 +53,7 @@ class Consumer(object):
                                                self.topic, 
                                                timestamp)
 
-        print("Block {}: Flushing 2MB file to HDFS => {}".format(str(self.block_cnt),
+        print("Block {}: Flushing 20MB file to HDFS => {}".format(str(self.block_cnt),
                                                                   hadoop_fullpath))
         self.block_cnt += 1
 
@@ -76,5 +76,5 @@ if __name__ == '__main__':
         print("Usage: consumer-hdfs <bootstrap_servers>", file=sys.stderr)
         exit(-1)
     print("\nConsuming messages...")
-    cons = Consumer(bootstrap_servers=sys.argv[1],  topic="cs")
+    cons = Consumer(bootstrap_servers=sys.argv[1],  topic="click")
     cons.consume_topic("tmp")

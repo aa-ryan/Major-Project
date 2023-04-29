@@ -20,12 +20,12 @@ class Producer(object):
                 message_info = {'prev_title': df.at[i, 'prev_title'],
                                 'curr_title': df.at[i, 'curr_title'],
                                 'type': df.at[i, 'type'],
-                                'n': df.at[i, 'n'],
+                                'n': int(df.at[i, 'n']),
                                 'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                                 }
                 message_info = json.dumps(message_info)
-                print (message_info)
-                producer.send('cs', message_info.encode('utf-8'))
+                # print (message_info)
+                producer.send('click', message_info.encode('utf-8'))
         except KeyboardInterrupt:
             pass
         finally:
