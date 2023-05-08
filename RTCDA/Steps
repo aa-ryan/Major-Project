@@ -51,6 +51,7 @@ Commands
 zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties
 kafka-server-start /usr/local/etc/kafka/server.properties
 hstart
+$SPARK_HOME/sbin/start-all.sh spark://localhost:7077
 conda activate hackpions1
 python preprocessing/preprocess_data.py
 python kafka/producer.py data/preprocessed_data.csv localhost:9092

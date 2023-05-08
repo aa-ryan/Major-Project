@@ -34,7 +34,7 @@ class Consumer(object):
             messageCount += 1
             self.temp_file.write(str(message.value, 'utf-8') + "\n")
             if messageCount % 1000 == 0:
-                if self.temp_file.tell() > 200000:
+                if self.temp_file.tell() > 20000000:
                     self.flush_to_hdfs(output_dir)
 
     def flush_to_hdfs(self, output_dir):
