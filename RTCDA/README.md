@@ -5,7 +5,7 @@ The motivation for building such a platform is that clickstream data is very com
 
 | Source        | topic         | timestamp           |
 | ------------- |:-------------:| -------------------:|
-| Google        | Super Bowl    | 2017-02-07 16:34:48 |
+| Google        | Super Bowl    | 2023-02-07 17:14:45 |
 
 ## Data Source
 I use the February 2015 data from Wikipedia Clickstream dataset. The data can be downloaded from this [link](https://figshare.com/articles/Wikipedia_Clickstream/1305770). The documentation of the data can be found in this [link](https://ewulczyn.github.io/Wikipedia_Clickstream_Getting_Started/)
