@@ -13,7 +13,7 @@ I use the February 2015 data from Wikipedia Clickstream dataset. The data can be
 ## Data Pipeline
 The data pipeline for the platform is shown in the following picture. First generate clickstream data from Wikipedia clickstream dataset. Then use Kafka to ingest the message. Then there is one batch line and one streaming line. The batch line use HDFS to store all the raw data and use spark to do batch processing. The streaming line use Spark Streaming to do nearly real time processing. Both batch and real-time lines will store processed data in Cassandra. Finally use Flask to visualize it.
 
-![pipeline](/image/pipeline.png?raw=true "pipeline")
+![pipeline](image/pipeline.png?raw=true "pipeline")
 
 ## Usage Instruction
 This code was run on Amazon AWS servers.
